@@ -10,4 +10,4 @@ Samaritan from Person of Interest
 2. Identify as Shikher
 3. ask for his commands
 4. Dark and light mode. (Ask samaritan)
-5.
+5. More coming soon!
