@@ -1,0 +1,269 @@
+/*
+ * Copyright (c) 2014, 2016 Gonçalo Baltazar <me@goncalomb.com>
+ * Samaritan is released under the terms of the MIT License,
+ * check the file LICENSE.txt.
+ */
+
+@font-face {
+	font-family: "Mono MMM 5";
+	src: url("../font/monoMMM_5.ttf");
+}
+@font-face {
+    font-family: magdacleanmono-bold;
+    src: url("../font/magdacleanmono-bold.ttf");
+}
+@font-face {
+    font-family: magdacleanmono-regular;
+    src: url("../font/magdacleanmono-regular.ttf");
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	overflow-y: scroll;
+	margin: 0;
+	color: white;
+	background-color: #000000;
+	transition-duration: 200ms;
+	position: absolute;
+	top: 45%;
+	right: 0;
+	left: 0;
+}
+
+body.color-invert {
+	color: black;
+	background-color: #f9f9f9;
+}
+/* samaritan */
+
+#samaritan {
+	font-family: 'magdacleanmono-bold', 'Nova Mono';
+	text-align: center;
+}
+
+#samaritan .hidden {
+	opacity: 0;
+}
+#samaritan .center {
+	display: block;
+top:50%;
+}
+#samaritan .text {
+	display: none;
+	margin: 0 auto;
+	font-size: 23px;
+	line-height: 23px;
+	min-height: 23px;
+	color: white;
+	white-space: nowrap;
+}
+#samaritan .text::after {
+	content: "";
+}
+
+.color-invert #samaritan.mode-text .text {
+	color: black;
+}
+#samaritan.mode-text .text {
+	display: inline-block;
+}
+#samaritan.mode-text-black .text {
+	display: inline-block;
+	background-color: black;
+	color: white;
+	letter-spacing: 8px;
+	padding: 5px 0px 5px 10px;
+	border-radius: 2px;
+	transition-duration: 200ms;
+}
+
+#samaritan .line {
+	display: none;
+	margin: 0 auto;
+	width: 30px;
+	border-bottom: 2px solid white;
+	transition-duration: 200ms;
+}
+.color-invert #samaritan.mode-text .line {
+	border-bottom-color: black;
+}
+#samaritan.mode-text .line {
+	display: block;
+}
+
+#samaritan .arrow {
+	display: none;
+	border-bottom: 10px solid transparent;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+#samaritan.mode-text .arrow {
+	display: inline-block;
+}
+#samaritan .arrow-animation {
+	border-bottom: 10px solid #330000;
+	-webkit-animation: samaritan-arrow-animation 1000ms alternate infinite linear;
+	animation: samaritan-arrow-animation 1000ms alternate infinite linear;
+}
+@-webkit-keyframes samaritan-arrow-animation {
+	from { border-bottom-color: #330000; }
+	to { border-bottom-color: #cc0000; }
+}
+@keyframes samaritan-arrow-animation {
+	from { border-bottom-color: #330000; }
+	to { border-bottom-color: #cc0000; }
+}
+
+#samaritan .message-box {
+	display: none;
+	text-align: left;
+	margin: 0 auto;
+	width: 500px;
+	transition-duration: 500ms;
+}
+#samaritan.mode-message-box .message-box {
+	display: block;
+}
+#samaritan .message-box .message-box-title {
+	font-size: 18px;
+	color: black;
+	background-color: white;
+	border: 2px solid black;
+	padding: 2px 15px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+#samaritan .message-box .message-box-text {
+	font-size: 16px;
+	color: white;
+	background-color: black;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	padding: 5px 15px;
+	min-height: 45px;
+}
+#samaritan .message-box .message-box-footer {
+	height: 15px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+#samaritan .fast-flash {
+	animation: fast-flash 300ms linear infinite;
+}
+@keyframes fast-flash {
+	0% { opacity: 1; }
+	49% { opacity: 1; }
+	50% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+/* other */
+
+#info, #subtitle {
+	font-family: 'Mono MMM 5', 'magdacleanmono-regular', 'Nova Mono';
+	font-size: 15px;
+	text-align: center;
+	margin-top: 40px;
+}
+#info {
+	transition-duration: 1000ms;
+}
+#info a {
+	color: #428bca;
+	text-decoration: none;
+}
+#info a:hover, #info a:focus {
+	color: #2a6496;
+	text-decoration: underline;
+}
+#subtitle {
+	font-style: italic;
+	transition-duration: 200ms;
+}
+.round {
+	display: inline;
+	border-radius: 50%;
+}
+.button {
+	/* background-image: url("../images/mic.png"); */
+	background: transparent;
+	border: none;
+    color: white;
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+	margin : 1%;
+  }
+
+.button:hover img,
+.button:active img,
+.button.active img{
+	height: 40px;
+}
+.button:focus{
+	outline: none;
+}
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: transparent;
+	color: white;
+	text-align: center;
+  }
+#say{
+	position: relative;
+	margin: 2%;
+	bottom: 10px;
+	width: 90%;
+}
+.mat {
+	background: #fff;
+	color: mix(black, muted-color, 25%);
+	border: none;
+	padding: 10px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.06em;
+	outline: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+.mat-dark{
+	background: black;
+	color: mix(white, muted-color, 75%);
+	border: none;
+	padding: 10px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.06em;
+	outline: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+.circle {
+    background-color: black;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+#spinner {
+    width: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#left{
+    float:left;
+}
+
+#right{
+    float:right;
+}
+
+#center{
+    margin:0 auto;
+}
